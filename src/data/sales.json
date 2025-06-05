@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Mountain Bike",
+    "description": "Durable and versatile bike for all terrains.",
+    "categoryName": "Bicycles",
+    "price": 15000,
+    "salePrice": 12000,
+    "stock": 5,
+    "totalSold": 3,
+    "onSale": true,
+    "image": "/images/mountain-bike.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Helmet Pro",
+    "description": "Lightweight helmet with max protection.",
+    "categoryName": "Accessories",
+    "price": 2500,
+    "salePrice": 1999,
+    "stock": 12,
+    "totalSold": 18,
+    "onSale": true,
+    "image": "/images/helmet-pro.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Cycling Gloves",
+    "description": "Comfortable gloves for long rides.",
+    "categoryName": "Accessories",
+    "price": 500,
+    "salePrice": 350,
+    "stock": 30,
+    "totalSold": 8,
+    "onSale": true,
+    "image": "/images/gloves.jpg"
+  }
+]

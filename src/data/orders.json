@@ -1,0 +1,30 @@
+[
+  {
+    "orderID": "ORD-001",
+    "customer": "John Doe",
+    "itemName": "AENXRD Mountain Bike Japan 26/27.5" ,
+    "quantity": 1,
+    "total": 4000,
+    "date": "2025-06-01",
+    "status": "Delivered"
+  },
+  {
+    "orderID": "ORD-002",
+    "customer": "SuperMan Dela Cruz",
+    "itemName": "Ultra-Light MTB Bike Seat with Comfort Features",
+    "quantity": 1,
+    "total": 499,
+    "date": "2025-06-01",
+    "status": "Pending"
+  },
+  {
+    "orderID": "ORD-001",
+    "customer": "John Doe",
+    "itemName": "GTA Alloy Roadbike Rim",
+    "quantity": 1,
+    "total": 499,
+    "date": "2025-06-01",
+    "status": "Pending"
+  }
+
+]

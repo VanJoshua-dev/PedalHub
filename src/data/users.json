@@ -1,0 +1,20 @@
+[
+    {
+        "users": [
+            {
+                "Email": "example1@gmail.com",
+                "User": "test1",
+                "Pass": "test1Pass",
+                "isAdmin": false,
+                "avatar": "../assets/sampleProfile"
+            },
+            {
+                "Email": "admin@gmail.com",
+                "User": "admin",
+                "Pass": "admin123",
+                "isAdmin": true, 
+                "avatar": "../assets/sampleProfile"
+            }
+        ]
+    }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "transactionID": "TXN001",
+    "customer": "John Doe",
+    "amount": 2500,
+    "paymentMethod": "GCash",
+    "date": "2025-06-01",
+    "status": "Completed"
+  },
+  {
+    "id": 2,
+    "transactionID": "TXN002",
+    "customer": "Jane Smith",
+    "amount": 1800,     
+    "paymentMethod": "Cash",
+    "date": "2025-06-02",
+    "status": "Pending"
+  },
+  {
+    "id": 3,
+    "transactionID": "TXN003",
+    "customer": "Meinard Burath",
+    "amount": 1800,
+    "paymentMethod": "Cash",
+    "date": "2025-06-03",
+    "status": "Pending"
+  },
+  {
+    "id": 4,
+    "transactionID": "TXN004",
+    "customer": "Superman Dela Cruz",
+    "amount": 1800,
+    "paymentMethod": "Debit Card",
+    "date": "2025-06-04",
+    "status": "Pending"
+  },
+  {
+    "id": 5,
+    "transactionID": "TXN005",
+    "customer": "Jumbotron jr.",
+    "amount": 1800,
+    "paymentMethod": "Debit Card",
+    "date": "2025-06-04",
+    "status": "Cancelled"
+  }
+]

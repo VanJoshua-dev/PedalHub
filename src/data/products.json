@@ -1,0 +1,144 @@
+
+
+[
+  {
+    "categoryName": "Bicycles",
+    "categoryImage": "/catImage/categorySample.png",
+    "items": [
+      {
+        "id": 1,
+        "name": "Trailblazer Mountain Bike",
+        "image": "/catImage/categorySample.png",
+        "description": "Perfect for rugged trails and off-road adventures. Lightweight aluminum frame with shock absorbers.",
+        "price": 14500,
+        "stock": 12,
+        "available": true,
+        "isTop": false,
+        "isNew": true
+      },
+      {
+        "id": 2,
+        "name": "Speedster Road Bike",
+        "image": "/catImage/categorySample.png",
+        "description": "Built for speed on paved roads. Sleek design with aerodynamic handlebars and narrow tires.",
+        "price": 13200,
+        "stock": 7,
+        "available": true,
+        "isTop": true,
+        "isNew": false
+      },
+      {
+        "id": 3,
+        "name": "Urban Commuter Bike",
+        "image": "/catImage/categorySample.png",
+        "description": "Ideal for city travel and everyday commuting. Includes luggage rack and comfortable saddle.",
+        "price": 11999,
+        "stock": 0,
+        "available": false,
+        "isTop": false,
+        "isNew": true
+      }
+    ]
+  },
+  {
+    "categoryName": "Bike Frames",
+    "categoryImage": "/catImage/categorySample.png",
+    "items": [
+      {
+        "id": 4,
+        "name": "Aluminum Frame 27.5",
+        "image": "/catImage/categorySample.png",
+        "description": "Durable yet lightweight frame suitable for mountain bikes with 27.5-inch wheels.",
+        "price": 5200,
+        "stock": 6,
+        "available": true,
+        "isTop": false,
+        "isNew": false
+      },
+      {
+        "id": 5,
+        "name": "Carbon Frame 29",
+        "image": "/catImage/categorySample.png",
+        "description": "High-performance carbon fiber frame for serious riders using 29-inch wheels.",
+        "price": 9400,
+        "stock": 3,
+        "available": true,
+        "isTop": true,
+        "isNew": false
+      },
+      {
+        "id": 6,
+        "name": "Steel Frame Classic",
+        "image": "/catImage/categorySample.png",
+        "description": "Classic and sturdy steel frame ideal for vintage bike builds.",
+        "price": 3500,
+        "stock": 0,
+        "available": false,
+        "isTop": false,
+        "isNew": false
+      }
+    ]
+  },
+  {
+    "categoryName": "Protected Gears",
+    "categoryImage": "/catImage/categorySample.png",
+    "items": [
+      {
+        "id": 7,
+        "name": "Cycling Helmet",
+        "image": "/catImage/categorySample.png",
+        "description": "Standard lightweight helmet for everyday riding. Adjustable straps and ventilation holes.",
+        "price": 899,
+        "stock": 20,
+        "available": true,
+        "isTop": false,
+        "isNew": true
+      },
+      {
+        "id": 8,
+        "name": "Knee & Elbow Pads",
+        "image": "/catImage/categorySample.png",
+        "description": "Comfortable and durable pads to protect joints during rides or falls.",
+        "price": 750,
+        "stock": 15,
+        "available": true,
+        "isTop": false,
+        "isNew": true
+      },
+      {
+        "id": 9,
+        "name": "Full Face Helmet",
+        "image": "/catImage/categorySample.png",
+        "description": "Provides full facial protection for downhill or extreme riding. Includes chin guard.",
+        "price": 1899,
+        "stock": 5,
+        "available": true,
+        "isTop": true,
+        "isNew": false
+      }
+    ]
+  },
+  {
+    "categoryName": "Chains",
+    "categoryImage": "/catImage/categorySample.png",
+    "items": [
+
+    ]
+  },
+  {
+    "categoryName": "Saddles",
+    "categoryImage": "/catImage/categorySample.png",
+    "items": [
+
+    ]
+  },
+  {
+    "categoryName": "Handlebars",
+    "categoryImage": "/catImage/categorySample.png",
+    "items": [
+
+    ]
+  }
+]
+
+
