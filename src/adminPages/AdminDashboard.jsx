@@ -1,9 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {useNavigate} from 'react-router-dom'
 import AdminSideBar from "../adminComponents/AdminSideBar";
 import AdminHeader from "../adminComponents/AdminHeader";
 import AdminMain from "../adminComponents/AdminMain";
 
 function AdminDashboard() {
+  const navigate = useNavigate()
+  useEffect(() => {
+      const storedUser = localStorage.getItem("user");
+      const storedRole = localStorage.getItem("role");
+  
+      if (storedUser && storedRole) {
+        if (storedRole === "admin") {
+          navigate("/dashboard");
+        } else if (storedRole === "user") {
+          navigate("/shop");
+        }
+      }
+    }, [navigate]);
   return (
     <div className="w-screen h-screen flex">
       <aside className="w-64 h-full bg-gray-100">

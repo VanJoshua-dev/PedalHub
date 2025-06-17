@@ -8,35 +8,63 @@
       {
         "id": 1,
         "name": "Trailblazer Mountain Bike",
-        "image": "/catImage/categorySample.png",
+        "image": "https://i5.walmartimages.com/asr/f13eaf4f-5d2c-43e0-b2d6-455f7c028452_1.79b199e872c7872496d35848d8e6c2d7.jpeg",
         "description": "Perfect for rugged trails and off-road adventures. Lightweight aluminum frame with shock absorbers.",
         "price": 14500,
         "stock": 12,
         "available": true,
+        "prodType": "Bicycles",
         "isTop": false,
         "isNew": true
       },
       {
         "id": 2,
         "name": "Speedster Road Bike",
-        "image": "/catImage/categorySample.png",
+        "image": "https://tse1.mm.bing.net/th/id/OIP.Ll8acASCyzetFvsDSczfYQHaHa?rs=1&pid=ImgDetMain",
         "description": "Built for speed on paved roads. Sleek design with aerodynamic handlebars and narrow tires.",
         "price": 13200,
         "stock": 7,
         "available": true,
+        "prodType": "Bicycles",
         "isTop": true,
-        "isNew": false
+        "isNew": false,
+        "sold": 2600
       },
       {
         "id": 3,
         "name": "Urban Commuter Bike",
-        "image": "/catImage/categorySample.png",
+        "image": "https://th.bing.com/th/id/R.00bd2b95f123fad36ccb6e60d9ab2166?rik=0H7YMC5TH5JHiw&riu=http%3a%2f%2fbikingtribe.com%2fwp-content%2fuploads%2f2017%2f10%2fcritical-cycles-harper-urban-commuter-bike.jpg&ehk=v%2f0XfnFTQwF0UTgzYY%2b2GmKUzn49U7mMMHt4pC6yL58%3d&risl=&pid=ImgRaw&r=0",
         "description": "Ideal for city travel and everyday commuting. Includes luggage rack and comfortable saddle.",
         "price": 11999,
         "stock": 0,
         "available": false,
+        "prodType": "Bicycles",
         "isTop": false,
         "isNew": true
+      },
+      {
+        "id": 10,
+        "name": "Touring Bike",
+        "image": "productImages/touringBike.png",
+        "description": "Built for long-distance touring. Comes with pannier mounts and wide gear range.",
+        "price": 15800,
+        "stock": 4,
+        "available": true,
+        "prodType": "Bicycles",
+        "isTop": false,
+        "isNew": false
+      },
+      {
+        "id": 11,
+        "name": "Foldable City Bike",
+        "image": "https://tse2.mm.bing.net/th/id/OIP.F7zjrxlbot4TfVrzaf97ggHaHa?rs=1&pid=ImgDetMain",
+        "description": "Compact and foldable, ideal for urban travel and public transport storage.",
+        "price": 8700,
+        "stock": 9,
+        "available": true,
+        "prodType": "Bicycles",
+        "isTop": false,
+        "isNew": false
       }
     ]
   },
@@ -47,33 +75,61 @@
       {
         "id": 4,
         "name": "Aluminum Frame 27.5",
-        "image": "/catImage/categorySample.png",
+        "image": "https://image.made-in-china.com/2f0j00zlmkhIDBrnbH/Aluminum-Alloy-26-27-5-29-Inch-Mountain-Bike-Frame-MTB-Bicycle-Frame.jpg",
         "description": "Durable yet lightweight frame suitable for mountain bikes with 27.5-inch wheels.",
         "price": 5200,
         "stock": 6,
         "available": true,
+        "prodType": "BikeFrames",
         "isTop": false,
         "isNew": false
       },
       {
         "id": 5,
         "name": "Carbon Frame 29",
-        "image": "/catImage/categorySample.png",
+        "image": "https://tse3.mm.bing.net/th/id/OIP.vFApin_QPz3dBSwQC_L8YgHaHa?rs=1&pid=ImgDetMain",
         "description": "High-performance carbon fiber frame for serious riders using 29-inch wheels.",
         "price": 9400,
         "stock": 3,
         "available": true,
+        "prodType": "BikeFrames",
         "isTop": true,
-        "isNew": false
+        "isNew": false,
+        "sold": 2500
       },
       {
         "id": 6,
         "name": "Steel Frame Classic",
-        "image": "/catImage/categorySample.png",
+        "image": "https://cdn.road.cc/sites/default/files/styles/main_width/public/ascent-break-away-frameset_0.jpg?itok=Mwrgs5g6",
         "description": "Classic and sturdy steel frame ideal for vintage bike builds.",
         "price": 3500,
         "stock": 0,
         "available": false,
+         "prodType": "BikeFrames",
+        "isTop": false,
+        "isNew": false
+      },
+      {
+        "id": 12,
+        "name": "Titanium Frame 26",
+        "image": "https://tse3.mm.bing.net/th/id/OIP.0VQDZcLwoCTpvT24ts1mowHaHa?rs=1&pid=ImgDetMain",
+        "description": "High-end titanium frame for riders seeking ultimate strength-to-weight ratio.",
+        "price": 15400,
+        "stock": 2,
+        "available": true,
+        "prodType": "BikeFrames",
+        "isTop": false,
+        "isNew": false
+      },
+      {
+        "id": 13,
+        "name": "Alloy Frame 700c",
+        "image": "https://ae01.alicdn.com/kf/H6f85c6891f694880bf5d035ea8d5072bT/700C-Road-Bike-Frame-6061-Aluminum-Alloy-High-Carbon-Steel-Front-Fork-Variable-Speed-Bicycle-Middle.jpg",
+        "description": "Affordable frame option compatible with 700c wheels.",
+        "price": 4600,
+        "stock": 8,
+        "available": true,
+        "prodType": "BikeFrames",
         "isTop": false,
         "isNew": false
       }
@@ -86,34 +142,62 @@
       {
         "id": 7,
         "name": "Cycling Helmet",
-        "image": "/catImage/categorySample.png",
+        "image": "https://tse4.mm.bing.net/th/id/OIP.YOGtJfIkA-swdjKWhHXDiAAAAA?rs=1&pid=ImgDetMain",
         "description": "Standard lightweight helmet for everyday riding. Adjustable straps and ventilation holes.",
         "price": 899,
         "stock": 20,
         "available": true,
+        "prodType": "ProtectedGears",
         "isTop": false,
         "isNew": true
       },
       {
         "id": 8,
         "name": "Knee & Elbow Pads",
-        "image": "/catImage/categorySample.png",
+        "image": "https://th.bing.com/th/id/R.095ee413ea82efc9f6f93ad232d1aa91?rik=LmVNpFElav0Xrg&riu=http%3a%2f%2fc.shld.net%2frpx%2fi%2fs%2fi%2fspin%2fimage%2fspin_prod_660149501%3f%3fhei%3d64%26wid%3d64%26qlt%3d50&ehk=H7y6rTraAWoxa%2b9qx82nxGXRCJYY7KP0yKYgChLQ9h0%3d&risl=&pid=ImgRaw&r=0",
         "description": "Comfortable and durable pads to protect joints during rides or falls.",
         "price": 750,
         "stock": 15,
         "available": true,
+        "prodType": "ProtectedGears",
         "isTop": false,
         "isNew": true
       },
       {
         "id": 9,
         "name": "Full Face Helmet",
-        "image": "/catImage/categorySample.png",
+        "image": "https://tse1.mm.bing.net/th/id/OIP.eiTDgf-XP_Q0J6rsDDJLHAHaHI?rs=1&pid=ImgDetMain",
         "description": "Provides full facial protection for downhill or extreme riding. Includes chin guard.",
         "price": 1899,
         "stock": 5,
         "available": true,
+        "prodType": "ProtectedGears",
         "isTop": true,
+        "isNew": false,
+        "sold": 2400
+      },
+      {
+        "id": 14,
+        "name": "Reflective Cycling Gloves",
+        "image": "https://tse2.mm.bing.net/th/id/OIP.LWzlWIY9efEYgv5m_Kpi2QHaIR?rs=1&pid=ImgDetMain",
+        "description": "Gloves with reflective patches for night rides. Padded for extra grip.",
+        "price": 499,
+        "stock": 14,
+        "available": true,
+        "prodType": "ProtectedGears",
+        "isTop": false,
+        "isNew": false
+      },
+      {
+        "id": 15,
+        "name": "Riding Sunglasses",
+        "image": "https://ae01.alicdn.com/kf/HTB1H5l3KaSWBuNjSsrbq6y0mVXau/Outdoor-Riding-Glasses-Bicycle-Sunglasses-Men-And-Women-2018-New-Sports-Riding-Glasses-Goggles-Set.jpg",
+        "description": "Protects eyes from wind and sunlight. Comes with interchangeable lenses.",
+        "price": 650,
+        "stock": 11,
+        "available": true,
+        "prodType": "ProtectedGears",
+        "isTop": false,
         "isNew": false
       }
     ]
@@ -122,6 +206,30 @@
     "categoryName": "Chains",
     "categoryImage": "/catImage/categorySample.png",
     "items": [
+      {
+        "id": 16,
+        "name": "Standard Bike Chain",
+        "image": "https://ae01.alicdn.com/kf/HTB1EaizNpXXXXX8aXXXq6xXFXXX2/High-carbon-steel-Fixed-gear-track-font-b-bike-b-font-bicycle-cycling-font-b-chain.jpg",
+        "description": "Durable and rust-resistant chain for multi-speed bikes.",
+        "price": 350,
+        "stock": 18,
+        "available": true,
+        "prodType": "Chains",
+        "isTop": false,
+        "isNew": false
+      },
+      {
+        "id": 17,
+        "name": "Heavy Duty Chain",
+        "image": "https://www.agrisupply.com/images/xxl/84999.jpg",
+        "description": "Extra-strong chain designed for mountain bikes and rugged use.",
+        "price": 420,
+        "stock": 10,
+        "available": true,
+        "prodType": "Chains",
+        "isTop": false,
+        "isNew": false
+      }
 
     ]
   },
@@ -129,6 +237,18 @@
     "categoryName": "Saddles",
     "categoryImage": "/catImage/categorySample.png",
     "items": [
+      {
+        "id": 18,
+        "name": "Comfort Gel Saddle",
+        "image": "https://s7d5.scene7.com/is/image/Specialized/27320-130_SDDL_BG-COMFORT-GEL-SADDLE-BLK-200_HERO",
+        "description": "Gel-padded seat for improved comfort during long rides.",
+        "price": 980,
+        "stock": 13,
+        "available": true,
+        "prodType": "Saddles",
+        "isTop": false,
+        "isNew": false
+      }
 
     ]
   },
@@ -136,6 +256,18 @@
     "categoryName": "Handlebars",
     "categoryImage": "/catImage/categorySample.png",
     "items": [
+      {
+        "id": 19,
+        "name": "Ergonomic Handlebar",
+        "image": "https://www.mticomposites.com/wp-content/uploads/2023/02/ergo2-1200x1200-1.jpg",
+        "description": "Ergonomically designed for wrist comfort and control.",
+        "price": 1100,
+        "stock": 6,
+        "available": true,
+        "proType": "Handlebars",
+        "isTop": false,
+        "isNew": false
+      }
 
     ]
   }

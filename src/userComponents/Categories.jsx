@@ -16,6 +16,7 @@ function Categories() {
 
           {categories.map((category, index) => (
             <div
+            title={"Tap to view all items in " + category.categoryName}
               key={index}
               className="flex flex-col items-center w-30 h-40 shadow p-1 rounded-sm hover:bg-gray-100"
             >

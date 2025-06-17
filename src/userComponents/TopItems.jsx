@@ -1,18 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
-import Img from "../assets/categorySample.png";
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
-
-//importing data
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import products from "../data/products.json";
-
 import { getTopItems } from "../utils/fetcher";
 
-function TopItems() {
-  //Get top items
-
+function TopItems({ onItemClick }) {
   const topItems = getTopItems(products);
-
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -41,18 +33,19 @@ function TopItems() {
   return (
     <div className="w-full flex flex-col items-center relative">
       <div className="shadow w-300 p-2">
-        <div className="border-b-2 flex flex-row justify-between items-center border-gray-300 py-5 text-xl">
+        <div className="border-b-2 flex justify-between items-center border-gray-300 py-5 text-xl">
           <h1>🔥 Top Items</h1>
-          <a
-            href=""
-            className="flex flex-row justify-center text-[17px] items-center gap-1 hover:underline"
-          >
-            See All <IoIosArrowForward />{" "}
-          </a>
+          {topItems > 10 &&(
+              <a
+                href="#"
+                className="flex items-center gap-1 text-[17px] hover:underline"
+              >
+                See All <IoIosArrowForward />
+              </a>
+            )}
         </div>
 
         <div className="relative">
-          {/* Left Scroll Button */}
           {canScrollLeft && (
             <button
               onClick={() => scroll("left")}
@@ -62,30 +55,33 @@ function TopItems() {
             </button>
           )}
 
-          {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="flex gap-2 overflow-x-auto overflow-x-hidden scroll-smooth px-1 py-1"
+            className="flex gap-2 overflow-x-auto scroll-smooth px-1 py-1"
             onScroll={updateScrollButtons}
           >
             {topItems.map((topItem, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex flex-col items-center w-48 h-48 shadow p-2 rounded-sm hover:bg-gray-100"
+                onClick={() => onItemClick(topItem)}
+                title="Tap to view item"
+                className="cursor-pointer flex-shrink-0 flex flex-col items-center w-48 h-48 shadow p-2 rounded-sm hover:bg-gray-100"
               >
                 <img
                   src={topItem.image}
-                  alt=""
+                  alt={topItem.name}
                   className="w-30 h-30 object-cover"
                 />
-                <p className="text-center break-all  text-sm mt-2">
+                <p className="text-center break-all text-sm mt-2">
                   {topItem.name}
+                </p>
+                <p className="text-start px-7 w-full break-all text-md mt-1">
+                  ₱{topItem.price}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Right Scroll Button */}
           {canScrollRight && (
             <button
               onClick={() => scroll("right")}

@@ -1,32 +1,10 @@
 import React from "react";
 import sample from "../assets/categorySample.png";
+import product from '../data/products.json'
+import { getTopItems } from "../utils/fetcher";
 function TopItems() {
-  const TopItem = [
-    {
-      image: sample,
-      name: "sample1",
-      desc: "This is sample description",
-      sold: 2600,
-    },
-    {
-      image: sample,
-      name: "sample1",
-      desc: "This is sample description",
-      sold: 2600,
-    },
-    {
-      image: sample,
-      name: "sample1",
-      desc: "This is sample description",
-      sold: 2600,
-    },
-    {
-      image: sample,
-      name: "sample1",
-      desc: "This is sample description",
-      sold: 2600,
-    },
-  ];
+  const TopItem = getTopItems(product);
+   
   return (
     <div className="w-full flex items-center justify-center gap-2 mt-8">
       <div className="w-full bg-white">
@@ -39,9 +17,9 @@ function TopItems() {
                 {/* Description */}
                 <p className="text-lg">{item.name}</p>
                 <p className="text-[12px]">description:</p>
-                <p className="text-[14px] pl-2">{item.desc}</p>
+                <p className="text-[14px] pl-2">{item.description}</p>
               </div>
-              <p className="absolute right-5 bottom-2 text-gray-400">
+              <p className="absolute right-5 top-2 text-gray-400">
                 {item.sold} Solds
               </p>
             </div>

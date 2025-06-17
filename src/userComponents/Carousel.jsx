@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import bg from '../assets/landingPagebackground.png'
 
-const images = [bg, bg, bg, bg, bg] // Replace with your images
+ // Replace with your images
 
 function Carousel() {
+  const images = [bg, bg, bg, bg, bg]
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const prevSlide = () => {

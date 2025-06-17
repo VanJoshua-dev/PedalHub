@@ -6,14 +6,14 @@
                 "User": "test1",
                 "Pass": "test1Pass",
                 "isAdmin": false,
-                "avatar": "../assets/sampleProfile"
+                "avatar": "catImage/sampleProfile.png"
             },
             {
                 "Email": "admin@gmail.com",
-                "User": "admin",
+                "User": "Meinard",
                 "Pass": "admin123",
                 "isAdmin": true, 
-                "avatar": "../assets/sampleProfile"
+                "avatar": "catImage/sampleProfile.png"
             }
         ]
     }

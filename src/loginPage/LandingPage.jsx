@@ -33,7 +33,7 @@ function LandingPage() {
                 >{buttons.label}</button>
                ))}
         </header>
-        <main className='welcomeTxt w-full mt-35 p-5 font-bold text-6xl flex flex-col justify-center items-center'>
+        <main className='welcomeTxt w-full mt-15 p-5 font-bold text-6xl flex flex-col justify-center items-center'>
                <div className='flex items-center'>
                     <h1
                     className='text-white mb-10'
@@ -52,7 +52,7 @@ function LandingPage() {
                type='button'
                onClick={() => navigate("/login")}
                className='text-black mt-5 bg-white p-2 text-2xl rounded-md hover:bg-gray-500'>
-                    Browse now
+                    Shop now
                </button>
         </main>
     </div>
