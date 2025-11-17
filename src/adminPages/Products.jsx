@@ -14,7 +14,7 @@ function Products() {
         <header className="mb-4 w-full bg-white h-14 flex jutify-center px-3 items-center">
             <AdminHeader />
         </header>
-        <main className="w-full h-70">
+        <main className="w-full h-full">
             <ProductsMain />
         </main>
         </div>

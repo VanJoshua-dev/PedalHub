@@ -97,7 +97,7 @@ function Loginform() {
         <div className="flex flex-row justify-between py-3 px-8">
           <div className="flex items-center gap-1">
             <input
-              className="w-5 h-5"
+              className="w-5 h-5 cursor-pointer"
               onChange={(e) => setShowPass(e.target.checked)}
               type="checkbox"
             />
@@ -112,7 +112,7 @@ function Loginform() {
 
         <div className="w-full flex p-5 justify-center">
           <button
-            className="py-3 px-9 rounded-md bg-blue-500 hover:bg-blue-600 text-white"
+            className="py-3 px-9 cursor-pointer rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300"
             type="submit"
           >
             Login

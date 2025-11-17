@@ -28,14 +28,14 @@ function AdminSideBar() {
         {label: "Users", icon: <LuUsersRound />, link: "/users"},
     ]
   return (
-    <div className='bg-[#0A1727] h-full'>
-      <header className='w-full h-35 flex border-b-2 border-gray-500 justify-center items-center'>
+    <div className='bg-[#0A1727] flex flex-col justify-between h-full'>
+      <header className='w-full py-5 flex border-b-2 border-gray-500 justify-center items-center'>
             <img
-            className='w-30'
+            className='h-25'
             src={logo} alt="PedalHub-Logo" />
       </header>
-      <div className='w-full h-full'>
-            <ul className='w-full h-128 flex flex-col gap-1 px-5 py-5'>
+      <div className='w-full h-full '>
+            <ul className='w-full flex flex-col gap-1 px-5 py-5'>
                 {tabs.map((tab, index) => (
                     <li
                     onClick={() => navigate(tab.link)}
@@ -47,10 +47,11 @@ function AdminSideBar() {
                 ))}
                 
             </ul>
-            <div className='w-full relative h-full text-black flex justify-end bg-gray-900'>
+            
+      </div>
+      <div className=' text-black flex justify-end bg-gray-900'>
                 <button className='w-full h-15 border-t-2 border-gray-500 text-white flex flex-row items-center gap-2 justify-center hover:bg-gray-800' onClick={() => navigate("/login")}><MdOutlineLogout size={20}/>Logout</button>
             </div>
-      </div>
     </div>
   )
 }
