@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
  */
 import AdminSideBar from "../components/admin-sidebar";
 import AdminHeader from "../components/admin-header";
+// import AdminBreadCrumb from "../components/admin-breadcrumb";
 
 function Main() {
   return (
@@ -19,6 +20,7 @@ function Main() {
         <header>
           <AdminHeader />
         </header>
+          {/* <AdminBreadCrumb /> */}
         <main className="px-5 py-5">
           <Outlet />
         </main>

@@ -9,11 +9,11 @@ function AdminHeader() { // Assuming user is stored as JSON object
   const getTitle = (pathname) => {
     const titleMap = {
       "/dashboard": "Dashboard",
-      "/dashboard/transactions": "Transactions",
+      "/dashboard/products/categories": "Product Categories",
       "/dashboard/orders": "Orders",
       "/dashboard/products": "Products",
       "/dashboard/sales": "Sales",
-      "/dashboard/users": "Users",
+      "/dashboard/customers": "Customers",
     };
     return titleMap[pathname] || "Admin Panel";
   };
@@ -27,7 +27,11 @@ function AdminHeader() { // Assuming user is stored as JSON object
       {/* User Profile */}
       <div className="flex items-center justify-center gap-2">
         <img src={profile} alt="Profile" className="w-10 h-10 rounded-full" />
-        <p className="text-xl">{"User"}</p>{" "}
+        <div className="flex flex-col items-center justify-center">
+          <p className="text-xl">{"Van Joshua"}</p>
+          <p className="text-sm text-blue-400">{"System Admin"}</p>
+        </div>
+        
       
       </div>
     </div>

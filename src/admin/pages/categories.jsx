@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TransactionList() {
+function ProductsCategories() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function TransactionList() {
   )
 }
 
-export default TransactionList
+export default ProductsCategories

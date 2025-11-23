@@ -8,6 +8,10 @@ function SignupPage() {
     const [showPass, setShowPass] = useState(false);
 
     const [error, setError] = useState(false)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
   return (
     <div
         className='w-screen h-screen p-20 flex justify-center items-center'
@@ -19,40 +23,42 @@ function SignupPage() {
     >
         <form
         className='w-120 h-140 rounded-sm p-5 bg-white shadow-[0px_0px_20px_3px_#f7fafc]'
-        action="">
+        onSubmit={handleSubmit}>
             <h1 className='w-full text-3xl mt-6 mb-10 text-center font-semibold'>Create your account</h1>
             {/* Email */}
             <div className='w-full px-6'>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email <sup className='text-red-500 text-sm'>*</sup></label>
                 <input 
                 className='w-full p-2 border-2 border-gray-500 rounded-md'
                 placeholder='Enter your email'
-                type="email" />
+                type="email"
+                required />
                 <p className={clsx('text-red-500', error ? "opacity-100" : "opacity-0")}>Email already exist.</p>
             </div>
             {/* Username */}
             <div className='w-full px-6'>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Username <sup className='text-red-500 text-sm'>*</sup></label>
                 <input 
                 className='w-full p-2 border-2 border-gray-500 rounded-md'
                 placeholder='Enter your username'
-                type="text" />
+                type="text"
+                required />
                 <p className={clsx('text-red-500', error ? "opacity-100" : "opacity-0")}>Username already exist.</p>
             </div>
             <div className='w-full px-6'>
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password <sup className='text-red-500 text-sm'>*</sup></label>
                 <input 
                 className='w-full p-2 border-2 border-gray-500 rounded-md'
                 placeholder='Enter your password'
-                type={showPass ? "text" : "password"} />
+                type={showPass ? "text" : "password"} 
+                required/>
                 <p className={clsx('text-red-500', error ? "opacity-100" : "opacity-0")}>Incorrect password.</p>
             </div>
 
             <div className='flex flex-row justify-between px-8'> 
-                {/* Checkbox for show password */}
                 <div className='flex items-center gap-1'>
                     <input 
-                    className='w-5 h-5 '
+                    className='w-5 h-5 cursor-pointer '
                     onChange={(e) => setShowPass(e.target.checked)}
                     type="checkbox" />
                     <label htmlFor="">Show password</label>
@@ -61,14 +67,14 @@ function SignupPage() {
 
             <div className='w-full p-5 flex justify-center'>
                 <button 
-                className='py-3 px-9 rounded-md bg-blue-500 hover:bg-blue-600'
+                className='py-3 px-9 cursor-pointer text-white rounded-md bg-blue-500 hover:bg-blue-600 transition-colors duration-300'
                 type="submit">Signup</button>
             </div>
 
             <div className='p-3'>
                 <p
                 className='text-center'
-                >Already have an account? <a className='text-blue-500 hover:underline' href="/login">Login here.</a></p>
+                >Already have an account? <a className='text-blue-500 cursor-pointer hover:underline transition-all duration-300' href="/login">Login here.</a></p>
             </div>
         </form>
     </div>

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import bg from "../assets/landingPagebackground.png";
 import logo from "../assets/Logo.png";
 import { FaShoppingCart } from "react-icons/fa";
+
 function LandingPage() {
   const navigate = useNavigate();
 
@@ -16,30 +17,31 @@ function LandingPage() {
     "We offer quality bikes, parts, and accessories, from gears and rims to tires and more.",
     "Whether you're upgrading or just getting started, we've got everything you need to ride with confidence.",
   ];
+
   return (
     <div
-      className="w-screen h-screen"
+      className="w-screen min-h-screen flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <header className="w-full p-5 flex flex-row gap-2 justify-end">
+      <header className="w-full p-5 flex flex-row gap-2 justify-end absolute top-0 right-0">
         {headerButton.map((buttons, index) => (
           <button
             key={index}
             onClick={() => navigate(buttons.link)}
-            className="text-white text-xl p-2 w-25 border-transparent border-b-2 hover:border-white transtion-all duration-300 hover:text-blue-300 cursor-pointer"
+            className="text-white text-xl p-2 w-25 border-transparent border-b-2 hover:border-white transition-all duration-300 hover:text-blue-300 cursor-pointer"
           >
             {buttons.label}
           </button>
         ))}
       </header>
-      <main className="welcomeTxt w-full h-full p-5 font-bold text-6xl flex flex-col justify-center  items-center">
-        <div className="flex items-center">
-          <h1 className="text-white mb-10">Welcome to</h1>
-          <img src={logo} alt="" className="w-100 mb-10" />
+      <main className="welcomeTxt text-center font-bold text-6xl flex flex-col justify-center items-center">
+        <div className="flex items-center mb-10">
+          <h1 className="text-white">Welcome to</h1>
+          <img src={logo} alt="Logo" className="w-100" />
         </div>
 
         {text.map((texts, index) => (
