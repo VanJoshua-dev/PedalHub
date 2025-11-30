@@ -26,13 +26,11 @@ function AdminHeader() { // Assuming user is stored as JSON object
 
       {/* User Profile */}
       <div className="flex items-center justify-center gap-2">
-        <img src={profile} alt="Profile" className="w-10 h-10 rounded-full" />
+        <img src={profile} alt="Profile" className="w-10 h-10 border-2 border-[#0A1727] rounded-full" />
         <div className="flex flex-col items-center justify-center">
           <p className="text-xl">{"Van Joshua"}</p>
           <p className="text-sm text-blue-400">{"System Admin"}</p>
         </div>
-        
-      
       </div>
     </div>
   );

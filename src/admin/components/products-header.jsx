@@ -77,11 +77,17 @@ function ProductHeader({ filterData, onFilterChange, isFilter }) {
            focus:border-blue-500 shadow-sm cursor-pointer"
           >
             <option value="">All</option>
-            {filterData.categories.map((cat, index) => (
-              <option key={cat.id || index} value={cat.slug}>
-                {cat.name}
-              </option>
-            ))}
+
+            {Array.isArray(filterData?.categories) &&
+            filterData.categories.length > 0 ? (
+              filterData.categories.map((cat, index) => (
+                <option key={cat.id || index} value={cat.slug}>
+                  {cat.name}
+                </option>
+              ))
+            ) : (
+              <option disabled>No categories available</option>
+            )}
           </select>
         </div>
 
@@ -96,11 +102,17 @@ function ProductHeader({ filterData, onFilterChange, isFilter }) {
            focus:border-blue-500 shadow-sm cursor-pointer"
           >
             <option value="">All</option>
-            {filterData.brands.map((brand, index) => (
-              <option key={index} value={brand.brand}>
-                {brand.brand}
-              </option>
-            ))}
+
+            {Array.isArray(filterData?.brands) &&
+            filterData.brands.length > 0 ? (
+              filterData.brands.map((brand, index) => (
+                <option key={index} value={brand.brand}>
+                  {brand.brand}
+                </option>
+              ))
+            ) : (
+              <option disabled>No brands available</option>
+            )}
           </select>
         </div>
 
@@ -144,6 +156,7 @@ function ProductHeader({ filterData, onFilterChange, isFilter }) {
         <AddProductModal
           isOpen={addNewProduct}
           onClose={() => setAddNewProduct(false)}
+          categories={filterData.categories}
         />
       )}
     </div>

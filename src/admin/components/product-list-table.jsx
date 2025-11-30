@@ -1,47 +1,32 @@
-import React from "react";
-
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 //icons
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-
+import EditProductModal from "./modals/edit-product-modal";
+import { useDeleteProduct } from "../../services/products-services";
 function ProductListTable({ products, isFilter }) {
   const handleViewImage = (product) => {
     Swal.fire({
-      title: product.Name,
-      html: `
-      <div style="text-align: left; margin-top: 15px;">
-        <p><strong>Brand:</strong> ${product.Brand}</p>
-        <hr />
-        <p><strong style="font-size: 30px;">Specifications:</strong></p>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          ${Object.entries(product.Specifications)
-            .map(
-              ([key, value]) =>
-                `<li style="margin-bottom: 4px;">
-                  <strong>${key.replace(/_/g, " ")}:</strong> ${value}
-                </li>`
-            )
-            .join("")}
-        </ul>
-      </div>
-    `,
       imageUrl: `http://localhost:5000/${product.Image}`,
       imageWidth: 400,
-      imageHeight: 200,
+      imageHeight: 400,
       imageAlt: product.Name,
       showConfirmButton: true,
       confirmButtonText: "Close",
     });
   };
+  const { handleDelete } = useDeleteProduct();
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <div className="w-full h-full flex flex-row bg-white rounded-2xl shadow-[0px_0px_6px_0px_rgba(0,_0,_0,_0.1)]">
       {/* Rounded outer wrapper */}
-      {products.products.length != 0 && (
-        <div className="relative w-full overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-xl overflow-hidden">
+      {Array.isArray(products?.products) && products.products.length > 0 && (
+        <div className="relative w-full overflow-auto bg-neutral-primary-soft shadow-xs rounded-xl h-[500px] scrollbar-hidden">
           <table className="w-full text-sm text-left rtl:text-right text-body">
-            <thead className="text-sm text-white text-body bg-[#0A1727]">
+            <thead className="text-sm text-white text-body bg-[#0A1727] sticky top-0 z-10">
               <tr>
                 <th scope="col" className="px-6 py-3 font-medium">
                   Image
@@ -50,20 +35,16 @@ function ProductListTable({ products, isFilter }) {
                   Name
                 </th>
                 <th scope="col" className="px-6 py-3 font-medium">
+                  Description
+                </th>
+                <th scope="col" className="px-6 py-3 font-medium">
                   Brand
                 </th>
                 <th scope="col" className="px-6 py-3 font-medium">
                   Category
                 </th>
-                <th scope="col" className="px-6 py-3 text-center font-medium">
-                  Specification
-                </th>
-                <th></th>
                 <th scope="col" className="px-6 py-3 font-medium">
                   Base Price
-                </th>
-                <th scope="col" className="px-6 py-3 font-medium">
-                  Variants
                 </th>
                 <th scope="col" className="px-6 py-3 font-medium">
                   Stock
@@ -80,7 +61,7 @@ function ProductListTable({ products, isFilter }) {
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="">
               {products.products.map((product, index) => (
                 <tr
                   key={product.id || index}
@@ -98,32 +79,13 @@ function ProductListTable({ products, isFilter }) {
                     />
                   </td>
                   <td className="px-6 py-4">{product.Name}</td>
+                  <td className="px-6 py-4 w-20">{product.Description}</td>
                   <td className="px-6 py-4">{product.Brand}</td>
                   <td className="px-6 py-4">{product.CategoryName}</td>
-                  <td colSpan={2} className="px-6 py-4 text-sm text-gray-700">
-                    <ul className="space-y-1">
-                      {Object.entries(product.Specifications).map(
-                        ([key, value]) => (
-                          <li
-                            key={key}
-                            className="flex justify-between items-start border-b border-gray-100 last:border-b-0 py-1"
-                          >
-                            <span className="font-medium text-gray-500 capitalize min-w-[40%] mr-4">
-                              {key.replace(/_/g, " ")}:
-                            </span>
 
-                            <span className="font-semibold text-gray-800 text-right flex-grow">
-                              {value}
-                            </span>
-                          </li>
-                        )
-                      )}
-                    </ul>
-                  </td>
                   <td className="px-6 py-4 w-40">₱{product.BasePrice}</td>
-                  <td className="px-6 py-4">{product.VariantsCount}</td>
                   <td className="px-6 py-4">{product.TotalStock}</td>
-                  <td className="px-6 py-4 w-30">
+                  <td className="px-6 py-4 w-40">
                     {product.Status === "In Stock" && (
                       <span className="py-2 px-2 bg-green-600 rounded-full text-white">
                         {product.Status}
@@ -143,12 +105,20 @@ function ProductListTable({ products, isFilter }) {
                     )}
                   </td>
                   <td className="px-3 py-4">
-                    <button className="py-2 px-2 bg-green-400 text-white flex items-center justify-center rounded-sm hover:bg-green-600 cursor-pointer transition-colors duration-300">
+                    <button
+                      onClick={() => setSelectedProduct(product)}
+                      className="py-2 px-2 bg-green-400 text-white flex items-center justify-center rounded-sm hover:bg-green-600 cursor-pointer transition-colors duration-300"
+                    >
                       <FaEdit size={20} />
                     </button>
                   </td>
                   <td className="px-3 py-4">
-                    <button className="py-2 px-2 bg-red-400 text-white flex items-center justify-center rounded-sm hover:bg-red-600 cursor-pointer duration-300">
+                    <button
+                      onClick={() =>
+                        handleDelete(product.productId, product.Name)
+                      }
+                      className="py-2 px-2 bg-red-400 text-white flex items-center justify-center rounded-sm hover:bg-red-600 cursor-pointer duration-300"
+                    >
                       <MdDelete size={20} />
                     </button>
                   </td>
@@ -159,16 +129,29 @@ function ProductListTable({ products, isFilter }) {
         </div>
       )}
 
-      {(products.products.length < 1 && isFilter === false) && (
-        <div className="w-full text-center py-2  text-xl font-medium">
-          No products yet
-        </div>
-      )}
+      {Array.isArray(products?.products) &&
+        products.products.length < 1 &&
+        isFilter === false && (
+          <div className="w-full text-center py-2  text-xl font-medium">
+            No products yet
+          </div>
+        )}
 
-      {(products.products.length < 1 && isFilter === true) && (
-        <div className="w-full text-center py-2  text-xl font-medium">
-          No product matched
-        </div>
+      {Array.isArray(products?.products) &&
+        products.products.length < 1 &&
+        isFilter === true && (
+          <div className="w-full text-center py-2  text-xl font-medium">
+            No product matched
+          </div>
+        )}
+
+      {selectedProduct && (
+        <EditProductModal
+          product={selectedProduct}
+          categories={products.categories}
+          onClose={() => setSelectedProduct(null)}
+          onSave={(updated) => console.log("Updated product:", updated)}
+        />
       )}
     </div>
   );

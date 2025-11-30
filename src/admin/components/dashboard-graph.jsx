@@ -18,14 +18,16 @@ import { MdBarChart } from "react-icons/md";
 import { IoMdStats } from "react-icons/io";
 
 export default function DashboardGraph(graph) {
-  console.log(graph?.data?.graph_data?.sales_over_time || []);
+  console.log(graph.graph_data.stock_levels);
 
   const graph_data = [
-    graph?.data?.graph_data?.sales_over_time || [],
-    graph?.data?.graph_data?.top_selling_products || [],
-    graph?.data?.graph_data?.revenue_by_category || [],
-    graph?.data?.graph_data?.stock_levels || [],
+    graph.graph_data.sales_over_time || [],
+    graph.graph_data.top_selling_products || [],
+    graph.graph_data.revenue_by_category || [],
+    graph.graph_data.stock_levels || [],
   ];
+
+  console.log("Graphs: ", graph_data);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[800px] px-2 py-2">
@@ -106,7 +108,7 @@ export default function DashboardGraph(graph) {
       {/* Chart 4 — Stock Table */}
       <div className="bg-white rounded-xl shadow p-4">
         <h2 className="font-semibold mb-2 flex items-center gap-2">
-          Stock Levels <IoMdStats size={20} />
+          Low Stock Levels <IoMdStats size={20} />
         </h2>
 
         <div className="overflow-x-auto max-h-[300px]">
@@ -114,8 +116,6 @@ export default function DashboardGraph(graph) {
             <thead className="bg-gray-100">
               <tr>
                 <th className="px-4 py-2 text-left font-semibold">Name</th>
-                <th className="px-4 py-2 text-left font-semibold">Size</th>
-                <th className="px-4 py-2 text-left font-semibold">Color</th>
                 <th className="px-4 py-2 text-left font-semibold">
                   Stock Quantity
                 </th>
@@ -129,9 +129,7 @@ export default function DashboardGraph(graph) {
                   className="border-t hover:bg-gray-50 transition"
                 >
                   <td className="px-4 py-2">{item.name}</td>
-                  <td className="px-4 py-2">{item.size}</td>
-                  <td className="px-4 py-2">{item.color}</td>
-                  <td className="px-4 py-2">{item.stockQuantity}</td>
+                  <td className="px-4 py-2">{item.stock}</td>
                 </tr>
               ))}
             </tbody>
